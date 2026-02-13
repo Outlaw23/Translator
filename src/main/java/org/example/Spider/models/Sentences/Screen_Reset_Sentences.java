@@ -11,25 +11,8 @@ import java.util.List;
 
 import static org.example.Spider.models.Components.Sub_Screens.Components_Sentences_Screens.Sentences_Explanation_Component.inputBoxesList;
 
-/**
- * Provides functionality to reset the Sentences screen.
- * Resets titles, buttons, words, sentences panel, and input boxes to their initial state.
- */
 public class Screen_Reset_Sentences {
 
-	/**
-	 * Resets the Sentences screen components to their initial state.
-	 *
-	 * @param wordsLabel           The label showing the words to place in sentences.
-	 * @param submitBtn            The Submit button for sentence checking.
-	 * @param backBtn              The back button.
-	 * @param doneBtn              The done button.
-	 * @param panelSentenceAndWords The panel containing sentence labels.
-	 * @param panelInputBoxes       The panel containing input boxes for user input.
-	 * @param checker               The {@link Check_Sentences_Words} instance handling checking logic.
-	 * @param wordsHado             The Hado-translated words to place in the sentences.
-	 * @param sentences             The original sentences to display.
-	 */
 	public static void resetScreen(
 			JLabel wordsLabel,
 			JLabel scoreLabel,

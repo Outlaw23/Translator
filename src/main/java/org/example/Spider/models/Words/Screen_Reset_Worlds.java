@@ -10,23 +10,8 @@ import javax.swing.text.StyledDocument;
 import java.awt.*;
 import java.util.List;
 
-/**
- * Utility class to reset the Words screen to its initial state.
- */
 public class Screen_Reset_Worlds {
 
-	/**
-	 * Resets the Words screen: clears inputs, resets titles, buttons, and displayed words.
-	 *
-	 * @param panelWords   the panel displaying the Hado words
-	 * @param guessList    the list of JTextPane input fields
-	 * @param op1Titel     secondary title JLabel
-	 * @param resetBtn     reset JButton
-	 * @param submitBtn    submit JButton
-	 * @param backBtn      back JButton
-	 * @param doneBtn      done JButton
-	 * @param checkWord    Check_Word instance to reset the internal state
-	 */
 	public static void resetScreen(
 			JPanel panelWords,
 			List<JTextPane> guessList,
@@ -37,22 +22,17 @@ public class Screen_Reset_Worlds {
 			JButton doneBtn,
 			Check_Word checkWord
 	) {
-		// 🎲 NIEUWE woorden automatisch
 		List<String> woorden = List_Maker.newWoords();
 
-		// 1. Reset internal state
 		checkWord.fullResetState();
 
-		// 2. Reset titles
 		op1Titel.setText("Guess words");
 
-		// 3. Reset buttons
 		resetBtn.setEnabled(true);
 		submitBtn.setEnabled(true);
 		backBtn.setEnabled(true);
 		doneBtn.setEnabled(false);
 
-		// 4. Reset words panel
 		panelWords.removeAll();
 		for (String wordStr : woorden) {
 			JLabel word = Words_Learn_Components.word(wordStr);
@@ -69,7 +49,6 @@ public class Screen_Reset_Worlds {
 		panelWords.revalidate();
 		panelWords.repaint();
 
-		// 5. Reset input fields
 		for (JTextPane pane : guessList) {
 			pane.setText("");
 			pane.setEditable(true);

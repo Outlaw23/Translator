@@ -8,18 +8,8 @@ import javax.swing.*;
 import static java.awt.Color.gray;
 import static java.awt.Color.white;
 
-/**
- * Provides reusable UI components for the
- * "Sentences Explanation" sub-screen.
- */
 public class Picture_Explanation_Component {
 
-	/**
-	 * Creates and returns a label containing the explanation
-	 * and rules for the Sentences game.
-	 *
-	 * @return a formatted JLabel with sentence instructions
-	 */
 	public static JLabel ExplanationPicture() {
 		MasterLabel explanation = new MasterLabel(
 				"<html>" +
@@ -37,17 +27,11 @@ public class Picture_Explanation_Component {
 						"The application checks the answers.<br/>" +
 						"The user chooses correct or incorrect based on how similar the descriptions are.<br/>" +
 						"The final score is shown." +
-						"</html>",white);
+						"</html>", white);
 
 		return explanation.getMasterLabel();
 	}
 
-	/**
-	 * Creates the Start button for the Sentences game.
-	 * Initializes the game logic using the current input list and indices.
-	 *
-	 * @return a configured Start JButton
-	 */
 	public static JButton startButtonPicture() {
 		MasterButton Start = new MasterButton("Start", "pictureLearnScreen", gray);
 

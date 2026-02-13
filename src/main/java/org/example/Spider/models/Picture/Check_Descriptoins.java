@@ -37,7 +37,7 @@ public class Check_Descriptoins {
 	List<String> hadoList = new ArrayList<>();
 	public int checkCounter = 0;
 	public int numberExample = 0;
-	public static int correctCount = 0;
+	public static int scorePicture = 0;
 
 	public void exampleText() {
 
@@ -105,14 +105,14 @@ public class Check_Descriptoins {
 			wordloop = false;
 			scoreController.showScorepicture(panel);
 		}
-		System.out.println(correctCount + " correct");
+		System.out.println(scorePicture + " correct");
 		System.out.println(checkCounter + " checked");
 		System.out.println(numberExample + " example");
 	}
 
 	public void questionReaderExample() {
 		String save_text_file_path_reader =
-				"src/main/java/org/example/Spider/models/Picture/TxtFiles/PictureQuestion" + numberExample +".txt";
+				"src/main/java/org/example/Spider/models/Picture/TxtFiles/PictureQuestion" + numberExample + ".txt";
 		try (BufferedReader reader = new BufferedReader(new FileReader(save_text_file_path_reader))) {
 
 			//
@@ -187,7 +187,7 @@ public class Check_Descriptoins {
 			StyleConstants.setForeground(style, Color.GREEN);
 
 			if (!alreadyCounted) {
-				correctCount++;
+				scorePicture++;
 				alreadyCounted = true;
 			}
 
@@ -205,7 +205,7 @@ public class Check_Descriptoins {
 	}
 
 	public void answerCorrect() {
-		correctCount++;
+		scorePicture++;
 	}
 
 	public void checkerWord() {
@@ -223,7 +223,7 @@ public class Check_Descriptoins {
 	}
 
 	public void reset() {
-		correctCount = 0;
+		scorePicture = 0;
 		checkCounter = 0;
 		numberExample = 0;
 		exampleList.clear();

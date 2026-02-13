@@ -11,49 +11,40 @@ import java.util.List;
 
 import static java.awt.Color.gray;
 
-/**
- * A custom JPanel that displays a background image stretched to fit the panel size.
- */
 public class MasterPanel extends JPanel {
-	/**
-	 * Constructs a masterpanel with the specified image path.
-	 *
-	 *
-	 */
+
 	private final JButton home;
 	private final JButton hado;
 	private final JButton hadoR;
 	private final JButton learn;
 	private final JButton info;
+
 	public MasterPanel(String titleDesc) {
 		this.setLayout(new BorderLayout());
 		this.setPreferredSize(new Dimension(1920, 1080));
 		this.setBorder(BorderFactory.createEmptyBorder(0, 20, 20, 20));
 		this.setBackground(new Color(255, 255, 255));
 
-
-		// Img_Paths.Background_Strip
-		// North/top navigation area
 		MasterImagePanel panelMainNorth = new MasterImagePanel(Img_Paths.Background_Strip);
 		panelMainNorth.setLayout(new BorderLayout());
 		panelMainNorth.setPreferredSize(new Dimension(1920, 50));
 		panelMainNorth.setBorder(BorderFactory.createEmptyBorder(0, 30, 0, 30));
-		panelMainNorth.setBackground(new Color(38, 66, 87,0));
+		panelMainNorth.setBackground(new Color(38, 66, 87, 0));
 
 		JPanel panelMainNavigation = new JPanel();
 		panelMainNavigation.setLayout(new GridLayout(0, 10, 5, 0));
 		panelMainNavigation.setPreferredSize(new Dimension(1300, 50));
 		panelMainNavigation.setBorder(BorderFactory.createEmptyBorder(5, 30, 5, 30));
-		panelMainNavigation.setBackground(new Color(38, 66, 87,0));
+		panelMainNavigation.setBackground(new Color(38, 66, 87, 0));
 
 		// Buttons (top navigation)
 		JLabel title = Components_Everywhere.Title(titleDesc);
 
-		home  = Components_Everywhere.homeButton(gray);
-		hado  = Components_Everywhere.hadoButton(gray);
+		home = Components_Everywhere.homeButton(gray);
+		hado = Components_Everywhere.hadoButton(gray);
 		hadoR = Components_Everywhere.hadoRButton(gray);
 		learn = Components_Everywhere.learnButton(gray);
-		info  = Components_Everywhere.infoButton(gray);
+		info = Components_Everywhere.infoButton(gray);
 
 
 		// Compose layout: add subpanels to the main panel
@@ -67,7 +58,6 @@ public class MasterPanel extends JPanel {
 		panelMainNavigation.add(learn);
 		panelMainNavigation.add(info);
 
-		// Components that will resize when the window is resized
 		List<JComponent> resizableComponents = Arrays.asList(
 				home,
 				hado,

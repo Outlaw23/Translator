@@ -37,37 +37,22 @@ public enum HadoLanguageMvc {
 	S("S", "Y"),
 	Y("Y", "G");
 
-	/** Original letter */
+
 	private final String letter;
 
-	/** Corresponding Hado letter */
+
 	private final String letterHado;
 
-	/**
-	 * Constructor to link a normal letter to its Hado equivalent.
-	 *
-	 * @param letter     original letter
-	 * @param letterHado corresponding Hado letter
-	 */
+
 	HadoLanguageMvc(String letter, String letterHado) {
 		this.letter = letter;
 		this.letterHado = letterHado;
 	}
 
-	/**
-	 * Gets the original letter.
-	 *
-	 * @return the original letter
-	 */
 	public String getLetter() {
 		return letter;
 	}
 
-	/**
-	 * Gets the corresponding Hado letter.
-	 *
-	 * @return the Hado letter
-	 */
 	public String getLetterHado() {
 		return letterHado;
 	}

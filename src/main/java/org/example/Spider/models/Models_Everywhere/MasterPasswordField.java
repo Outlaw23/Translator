@@ -4,17 +4,10 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-/**
- * A reusable JPasswordField class with pre-configured font and border styling.
- */
 public class MasterPasswordField {
 
-	/** The underlying JPasswordField used for password input */
 	private final JPasswordField passwordField;
 
-	/**
-	 * Constructs a MasterPasswordField with custom font and border styling.
-	 */
 	public MasterPasswordField() {
 		// Create a dark gray border with thickness 3
 		Border bordertextarea = BorderFactory.createLineBorder(Color.DARK_GRAY, 3);
@@ -29,11 +22,6 @@ public class MasterPasswordField {
 		passwordField.setBorder(bordertextarea);
 	}
 
-	/**
-	 * Returns the underlying JPasswordField instance.
-	 *
-	 * @return the styled JPasswordField
-	 */
 	public JPasswordField getPasswordField() {
 		return passwordField;
 	}

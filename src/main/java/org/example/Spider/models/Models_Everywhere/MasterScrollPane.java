@@ -4,14 +4,13 @@ import javax.swing.*;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 import java.awt.*;
 
-public class MasterScrollPane {
-
-	private final JScrollPane scrollPane;
+public record MasterScrollPane(JScrollPane scrollPane) {
 
 	public MasterScrollPane(Component content) {
-		scrollPane = new JScrollPane(content);
+		this(new JScrollPane(content));
 
 		scrollPane.setBorder(null);
+		
 		scrollPane.setBackground(Color.DARK_GRAY);
 		scrollPane.getViewport().setBackground(Color.DARK_GRAY);
 

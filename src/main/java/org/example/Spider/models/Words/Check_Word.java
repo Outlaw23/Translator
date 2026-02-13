@@ -15,38 +15,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Handles the checking of guessed words against the correct words.
- * Highlights letters in green, yellow, or red depending on correctness.
- */
+
 public class Check_Word {
 	public static int scoreWords = 0;
 
-	/** Index of the current row being checked. */
 	int rowIndex = 0;
 
-	/** Index of the end row for the current check window. */
 	int rowEndindex = 54;
 
-	/** Tracks the number of checks performed. */
 	int checkindex = 0;
 
-	/** Logger instance for debug and error logging. */
 	private static final Logger log = LoggerFactory.getLogger(Check_Word.class);
 
-	/**
-	 * Checks the user's guesses against the correct words.
-	 * Colors letters in green (correct), yellow (wrong position), or red (incorrect).
-	 *
-	 * @param GuessList list of JTextPane components containing the user's guesses
-	 */
 	public void checkWord(List<JTextPane> GuessList) {
 		int wordIndex = -1;
 
 		Words_Learn_Components.reset().setEnabled(false);
 		Words_Learn_Components.back().setEnabled(false);
 
-		// Iterate over rows (1 woord per rij)
 		for (int index = rowIndex; index <= rowEndindex; index += 6) {
 			List<String> woorden = List_Maker.getWoorden();
 			wordIndex++;
@@ -60,12 +46,10 @@ public class Check_Word {
 			String[] kleuren = new String[gok.length()];
 			Map<Character, Integer> letterCount = new HashMap<>();
 
-			// Letterfrequentie van het juiste woord
 			for (char c : woord.toCharArray()) {
 				letterCount.put(c, letterCount.getOrDefault(c, 0) + 1);
 			}
 
-			// 🟩 Stap 1: groen (juiste letter + positie)
 			for (int i = 0; i < gok.length(); i++) {
 				if (i < woord.length() && gok.charAt(i) == woord.charAt(i)) {
 					kleuren[i] = "Groen";
@@ -73,7 +57,6 @@ public class Check_Word {
 				}
 			}
 
-			// 🟨🟥 Stap 2: geel of rood
 			for (int i = 0; i < gok.length(); i++) {
 				if (kleuren[i] != null) continue;
 
@@ -86,12 +69,10 @@ public class Check_Word {
 				}
 			}
 
-			// ✅ SCORE: alleen als het hele woord klopt
 			if (gok.equals(woord)) {
 				scoreWords++;
 			}
 
-			// Resultaat tonen in JTextPane
 			StyledDocument doc = pane.getStyledDocument();
 			pane.setText("");
 
@@ -111,7 +92,6 @@ public class Check_Word {
 				}
 			}
 
-			// Debug output
 			for (int i = 0; i < gok.length(); i++) {
 				IO.println(gok.charAt(i) + " -> " + kleuren[i]);
 			}
@@ -121,7 +101,6 @@ public class Check_Word {
 			pane.setEditable(false);
 			pane.setBackground(new Color(189, 189, 189));
 
-			// Volgende rij activeren of spel beëindigen
 			if (rowEndindex <= 58) {
 				if (index == rowEndindex) {
 					rowIndex++;
@@ -138,6 +117,7 @@ public class Check_Word {
 
 		RowsTrue(GuessList);
 	}
+
 	/**
 	 * Enables the next row of JTextPane for input.
 	 *
@@ -154,9 +134,6 @@ public class Check_Word {
 		}
 	}
 
-	/**
-	 * Resets all internal counters and indices to the initial state.
-	 */
 	public void fullResetState() {
 		rowIndex = 0;
 		rowEndindex = 54;

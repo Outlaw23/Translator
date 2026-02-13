@@ -6,17 +6,8 @@ import javax.swing.*;
 
 import static java.awt.Color.white;
 
-/**
- * Provides reusable UI components for the
- * main screen of the application.
- */
 public class Main_Screen_Components {
 
-	/**
-	 * Creates a label for the Hado screen with title and description.
-	 *
-	 * @return a formatted JLabel for the Hado screen
-	 */
 	public static JLabel hadoLabel() {
 		MasterLabel hadoScreen = new MasterLabel(
 				"<html><font size=30>Hado</font><br/>" +
@@ -26,11 +17,6 @@ public class Main_Screen_Components {
 		return hadoScreen.getMasterLabel();
 	}
 
-	/**
-	 * Creates a label for the HadoR screen with title and description.
-	 *
-	 * @return a formatted JLabel for the HadoR screen
-	 */
 	public static JLabel hadoRLabel() {
 		MasterLabel hadoRScreen = new MasterLabel(
 				"<html><font size=30>HadoR</font><br/>" +

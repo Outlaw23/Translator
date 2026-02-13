@@ -19,12 +19,6 @@ public class List_Maker {
 	private static List<String> woorden; // cached list of words
 	private static final Logger log = LoggerFactory.getLogger(List_Maker.class);
 
-	/**
-	 * Fetch a specified number of random words from the database.
-	 *
-	 * @param count the number of random words to retrieve
-	 * @return list of random words
-	 */
 	public static List<String> getRandomWords(int count) {
 		List<String> words = new ArrayList<>();
 		String sql = "SELECT word FROM words ORDER BY RAND() LIMIT " + count;
@@ -44,11 +38,6 @@ public class List_Maker {
 		return words;
 	}
 
-	/**
-	 * Returns the cached list of words, generating it if it doesn't exist yet.
-	 *
-	 * @return list of words
-	 */
 	public static List<String> getWoorden() {
 		if (woorden == null) {
 			woorden = getRandomWords(10);
@@ -56,11 +45,6 @@ public class List_Maker {
 		return woorden;
 	}
 
-	/**
-	 * Generates a new list of words (used for reset functionality).
-	 *
-	 * @return new list of random words
-	 */
 	public static List<String> newWoords() {
 		woorden = getRandomWords(10);
 		return woorden;

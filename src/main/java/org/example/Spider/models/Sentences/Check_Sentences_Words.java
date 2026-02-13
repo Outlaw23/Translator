@@ -19,27 +19,21 @@ import java.util.logging.Logger;
 import static org.example.Spider.models.Components.Sub_Screens.Components_Sentences_Screens.Sentences_Explanation_Component.rowEndindex;
 import static org.example.Spider.models.Components.Sub_Screens.Components_Sentences_Screens.Sentences_Explanation_Component.rowIndex;
 
-/**
- * Handles the logic for checking sentence inputs in the learning screens.
- * Validates user-entered sentences against correct variants and updates colors for feedback.
- */
+
 public class Check_Sentences_Words {
 
-	/** Logger for error reporting */
 	private static final Logger LOGGER = Logger.getLogger(Check_Sentences_Words.class.getName());
 
-	/** Tracks the current checked row index */
+
 	int checkindex = -1;
 
-	/** Tracks which row should be locked (made read-only) */
+	/**
+	 * Tracks which row should be locked (made read-only)
+	 */
 	int rowOff = 0;
 
-	/**
-	 * Checks user-entered sentences in the JTextPanes against the correct sentence variants.
-	 * Colors words green if correct and red if incorrect. Advances rows as needed.
-	 *
-	 */
 	public static int scoreSentences = 0;
+
 	public void checkSentenceWords(List<JTextPane> inputBoxesList,
 								   List<List<String>> correcteWoordenLijsten) {
 
@@ -174,14 +168,6 @@ public class Check_Sentences_Words {
 		}
 	}
 
-
-	/**
-	 * Makes the specified range of JTextPanes editable and focused for user input.
-	 *
-	 * @param inputBoxesList the list of JTextPanes
-	 * @param start          the start index (inclusive)
-	 * @param end            the end index (inclusive)
-	 */
 	public void RowsTrueSentences(List<JTextPane> inputBoxesList, int start, int end) {
 		for (int index = start; index <= end; index++) {
 			JTextPane pane = inputBoxesList.get(index);
@@ -192,10 +178,6 @@ public class Check_Sentences_Words {
 		}
 	}
 
-	/**
-	 * Resets the state of all rows and buttons in the sentence learning screen.
-	 * Makes all rows editable from the first, resets internal counters, and re-enables buttons.
-	 */
 	public void fullResetState() {
 		checkindex = -1;
 		rowOff = 0;

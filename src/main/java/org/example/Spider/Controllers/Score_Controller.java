@@ -8,7 +8,7 @@ import org.example.Spider.view.Learn_Sub_Screens.Picture_Screen.Picture_Learn_Sc
 import javax.swing.*;
 import java.awt.*;
 
-import static org.example.Spider.models.Picture.Check_Descriptoins.correctCount;
+import static org.example.Spider.models.Picture.Check_Descriptoins.scorePicture;
 import static org.example.Spider.models.Sentences.Check_Sentences_Words.scoreSentences;
 import static org.example.Spider.models.Words.Check_Word.scoreWords;
 import static org.example.Spider.view.Learn_Sub_Screens.Picture_Screen.Picture_Learn_Screen_view.panelMainCenterPicture;
@@ -18,7 +18,7 @@ public class Score_Controller {
 
 	public void showScorepicture(Picture_Learn_Screen_view view) {
 		int totalCount = 20;
-		int percentage = (correctCount * 100) / totalCount;
+		int percentage = (scorePicture * 100) / totalCount;
 		panelMainCenterPicture.removeAll();
 		panelMainCenterPicture.setLayout(new BorderLayout());
 

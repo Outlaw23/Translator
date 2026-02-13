@@ -7,25 +7,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
- * Utility class to provide a JDBC Connection using properties from db.properties.
- */
 public class DBConnection {
 
-	/**
-	 * Returns a JDBC Connection using the configuration from db.properties.
-	 * <p>
-	 * The db.properties file should contain:
-	 * <ul>
-	 *     <li>db.url = jdbc:... (JDBC URL)</li>
-	 *     <li>db.user = database username</li>
-	 *     <li>db.password = database password</li>
-	 * </ul>
-	 *
-	 * @return a live JDBC {@link Connection}
-	 * @throws SQLException if a database access error occurs
-	 * @throws IOException  if there is an error reading db.properties
-	 */
 	public static Connection getConnection() throws SQLException, IOException {
 		Properties props = new Properties();
 

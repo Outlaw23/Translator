@@ -16,20 +16,10 @@ import static java.awt.Color.white;
  */
 public class Words_Explanation_Components {
 
-	/**
-	 * Shared list of text panes used for word guesses
-	 * during the Words learning game.
-	 */
 	public static List<JTextPane> GuessList = new ArrayList<>();
 
-	/**
-	 * Creates and returns the explanation label describing
-	 * the rules and flow of the Words guessing game.
-	 *
-	 * @return a formatted JLabel containing the game explanation
-	 */
 	public static JLabel ExplanationWords() {
-		MasterLabel explanation  = new MasterLabel(
+		MasterLabel explanation = new MasterLabel(
 				"<html><font size=30>Words explanation</font><br/>" +
 						"<html><font size=6>" +
 						"In this game, the player tries to guess words in the Hado language.<br/><br/>" +
@@ -49,12 +39,6 @@ public class Words_Explanation_Components {
 		return explanation.getMasterLabel();
 	}
 
-	/**
-	 * Creates the start button for the Words game.
-	 * Initializes the game using the shared GuessList.
-	 *
-	 * @return a configured Start JButton
-	 */
 	public static JButton startButtonWords() {
 		MasterButton Start = new MasterButton("Start", "screenWordsLearn", gray);
 

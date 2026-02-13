@@ -24,17 +24,17 @@ public class Picture_Learn_Component {
 	private static JLabel scoreLabel;
 	private static JButton donePicture;
 
-	public static JTextArea	description() {
+	public static JTextArea description() {
 		if (description == null) {
-		MasterTextArea descriptions = new MasterTextArea();
-		descriptions.getDescription().setText("Describe the picture");
-		description = descriptions.getDescription();
+			MasterTextArea descriptions = new MasterTextArea();
+			descriptions.getDescription().setText("Describe the picture");
+			description = descriptions.getDescription();
 
 		}
 		return description;
 	}
 
-	public static JTextArea	example() {
+	public static JTextArea example() {
 		if (example == null) {
 			MasterTextArea examples = new MasterTextArea();
 			examples.getDescription().setText("");
@@ -43,8 +43,6 @@ public class Picture_Learn_Component {
 		}
 		return example;
 	}
-
-
 
 	public static JTextPane answer() {
 		if (answer == null) {
@@ -112,7 +110,7 @@ public class Picture_Learn_Component {
 	}
 
 	public static JButton donePicture(Picture_Learn_Screen_view view) {
-		if ( donePicture == null) {
+		if (donePicture == null) {
 			MasterButton donebutton = new MasterButton("Done", "screenLearn", Color.gray);
 			donePicture = donebutton.getMasterbutton();
 			donebutton.getMasterbutton().addActionListener(_ -> view.initialize());

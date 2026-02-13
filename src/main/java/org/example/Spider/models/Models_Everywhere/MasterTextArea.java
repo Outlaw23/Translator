@@ -4,13 +4,8 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-/**
- * A reusable class for multiple pre-configured JTextAreas used throughout the application.
- * Provides standardized fonts, borders, and read-only settings for output areas.
- */
 public class MasterTextArea {
 
-	/** Static JTextArea instances to avoid multiple initializations */
 	private static JTextArea masterTextArea;
 	private static JTextArea input;
 	private static JTextArea output;
@@ -22,10 +17,6 @@ public class MasterTextArea {
 	private static JTextArea description;
 	private static JTextArea example;
 
-	/**
-	 * Constructor initializes all text areas if they haven't been created yet.
-	 * Ensures consistent font, border, and editable settings for each type of text area.
-	 */
 	public MasterTextArea() {
 		if (masterTextArea == null) {
 			Border bordertextarea = BorderFactory.createLineBorder(Color.DARK_GRAY, 3);
@@ -99,51 +90,22 @@ public class MasterTextArea {
 		}
 	}
 
-	/**
-	 * Returns the input JTextArea.
-	 *
-	 * @return the input JTextArea
-	 */
 	public JTextArea gettextinput() {
 		return input;
 	}
 
-	/**
-	 * Returns the output JTextArea (read-only).
-	 *
-	 * @return the output JTextArea
-	 */
 	public JTextArea gettextoutput() {
 		return output;
 	}
 
-	/**
-	 * Returns the reverse input JTextArea.
-	 *
-	 * @return the reverse input JTextArea
-	 */
 	public JTextArea gettextinputR() {
 		return inputR;
 	}
 
-	/**
-	 * Returns the reverse output JTextArea (read-only).
-	 *
-	 * @return the reverse output JTextArea
-	 */
 	public JTextArea gettextoutputR() {
 		return outputR;
 	}
-
-	/**
-	 * Returns the brief explanation JTextArea.
-	 *
-	 * @return the brief explanation JTextArea
-	 */
-	public JTextArea getBriefExplanation() {
-		return briefExplanation;
-	}
-
+	
 	public JTextArea getDescription() {
 		return description;
 	}

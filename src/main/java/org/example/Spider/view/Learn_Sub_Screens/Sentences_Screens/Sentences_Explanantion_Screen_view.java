@@ -13,66 +13,33 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * View class for the Sentences explanation screen.
- * <p>
- * This screen explains how sentence exercises work
- * and provides a start button to begin the activity.
- */
 public class Sentences_Explanantion_Screen_view {
 
 	// Holds sentence input rows (used later during learning)
 	public static List<List<JTextPane>> rows = new ArrayList<>();
 
-	/**
-	 * Creates and returns the Sentences Explanation screen panel.
-	 *
-	 * @return fully constructed explanation JPanel
-	 */
+
 	public JPanel screenSentencesExplanation() {
 
-		// =========================
-		// Main container
-		// =========================
 		MasterPanel panelMain = new MasterPanel("Sentences");
 
-		// =========================
-		// Center panel with background
-		// =========================
 		MasterImagePanel panelMainCenter = new MasterImagePanel(Img_Paths.Background_Spider);
 		panelMainCenter.setLayout(new BorderLayout());
 		panelMainCenter.setPreferredSize(new Dimension(1920, 500));
 		panelMainCenter.setBorder(BorderFactory.createEmptyBorder(50, 100, 50, 100));
 		panelMainCenter.setBackground(new Color(95, 102, 107));
 
-		// =========================
-		// Start button panel
-		// =========================
 		JPanel panelStartButton = new JPanel(new GridLayout(0, 10, 5, 5));
 		panelStartButton.setPreferredSize(new Dimension(1920, 60));
 		panelStartButton.setBorder(BorderFactory.createEmptyBorder(5, 30, 5, 30));
 		panelStartButton.setBackground(new Color(95, 102, 107, 0));
 
-		// =========================
-		// Labels
-		// =========================
 		JLabel explanation = Sentences_Explanation_Component.ExplanationSentences();
 
-		// =========================
-		// Start button
-		// =========================
-
-		// The start button activates the sentence exercise
 		JButton Start = Sentences_Explanation_Component.startButtonSentences();
 		JButton Back = Components_Everywhere.backButton(Color.gray);
 
-		// =========================
-		// Layout composition
-		// =========================
-
 		panelMain.add(panelMainCenter, BorderLayout.CENTER);
-
-
 
 		panelMainCenter.add(explanation, BorderLayout.NORTH);
 		panelMainCenter.add(panelStartButton, BorderLayout.SOUTH);
@@ -80,9 +47,6 @@ public class Sentences_Explanantion_Screen_view {
 		panelStartButton.add(Back);
 		panelStartButton.add(Start);
 
-		// =========================
-		// Responsive font resizing
-		// =========================
 		List<JComponent> resizableComponents = Arrays.asList(
 				Back,
 				Start,
@@ -91,7 +55,6 @@ public class Sentences_Explanantion_Screen_view {
 
 		Font_Resizer.applyResizeLogic(panelMain, resizableComponents);
 
-		// Return completed panel
 		return panelMain;
 	}
 }

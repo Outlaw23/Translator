@@ -6,18 +6,8 @@ import javax.swing.*;
 
 import static java.awt.Color.white;
 
-/**
- * Provides reusable UI components for the
- * Info screen of the application.
- */
 public class Info_Screen_Components {
 
-	/**
-	 * Creates a label displaying information and instructions about Hado.
-	 * Includes an explanation of letter mappings and usage tips.
-	 *
-	 * @return a formatted JLabel containing the info text
-	 */
 	public static JLabel infoLabel() {
 		MasterLabel hadoScreen = new MasterLabel(
 				"<html><font size=30>Hado</font><br/><br/>" +
