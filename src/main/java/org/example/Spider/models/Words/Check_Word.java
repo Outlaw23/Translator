@@ -93,9 +93,9 @@ public class Check_Word {
 			}
 
 			for (int i = 0; i < gok.length(); i++) {
-				IO.println(gok.charAt(i) + " -> " + kleuren[i]);
+				System.out.println(gok.charAt(i) + " -> " + kleuren[i]);
 			}
-			IO.println("-------");
+			System.out.println("-------");
 
 			// Lock deze rij
 			pane.setEditable(false);

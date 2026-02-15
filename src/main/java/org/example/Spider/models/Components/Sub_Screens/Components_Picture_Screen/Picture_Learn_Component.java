@@ -113,7 +113,7 @@ public class Picture_Learn_Component {
 		if (donePicture == null) {
 			MasterButton donebutton = new MasterButton("Done", "screenLearn", Color.gray);
 			donePicture = donebutton.getMasterbutton();
-			donebutton.getMasterbutton().addActionListener(_ -> view.initialize());
+			donebutton.getMasterbutton().addActionListener(e -> view.initialize());
 		}
 		return donePicture;
 	}

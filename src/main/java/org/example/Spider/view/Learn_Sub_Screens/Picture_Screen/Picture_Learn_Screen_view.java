@@ -94,13 +94,13 @@ public class Picture_Learn_Screen_view {
 
 		goed = correct();
 		answerExample = answerExample();
-		goed.addActionListener(_ -> check_descriptoins.descriptionCheck());
-		goed.addActionListener(_ -> check_descriptoins.answerCorrect());
-		fout.addActionListener(_ -> check_descriptoins.descriptionCheck());
+		goed.addActionListener(e -> check_descriptoins.descriptionCheck());
+		goed.addActionListener(e -> check_descriptoins.answerCorrect());
+		fout.addActionListener(e -> check_descriptoins.descriptionCheck());
 
 		descriptions_and_answers = new Descriptions_and_answers();
 		sumbit = Picture_Learn_Component.submit();
-		sumbit.addActionListener(_ -> submit());
+		sumbit.addActionListener(e -> submit());
 
 		answer = Picture_Learn_Component.answer();
 		description = Picture_Learn_Component.description();

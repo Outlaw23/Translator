@@ -62,7 +62,7 @@ public class MasterButton {
 		});
 
 		// Switch a panel when the button is clicked
-		masterbutton.addActionListener(_ -> Screen_controller.showPanel(panelname));
+		masterbutton.addActionListener(e -> Screen_controller.showPanel(panelname));
 	}
 
 	public JButton getMasterbutton() {
@@ -70,22 +70,22 @@ public class MasterButton {
 	}
 
 	public void transletActionListener(JTextArea input, JTextArea output) {
-		masterbutton.addActionListener(_ -> hado.transform(input, output));
+		masterbutton.addActionListener(e -> hado.transform(input, output));
 	}
 
 	public void transletRActionListener(JTextArea inputR, JTextArea outputR) {
-		masterbutton.addActionListener(_ -> hado.transformR(inputR, outputR));
+		masterbutton.addActionListener(e -> hado.transformR(inputR, outputR));
 	}
 
 	public void loginButtonActionListener(JTextField ID, JPasswordField password, JLabel messageLabel) {
-		masterbutton.addActionListener(_ -> login.loginVerification(ID, password, messageLabel));
+		masterbutton.addActionListener(e -> login.loginVerification(ID, password, messageLabel));
 	}
 
 	public void startWords(List<JTextPane> guess) {
-		masterbutton.addActionListener(_ -> check.RowsTrue(guess));
+		masterbutton.addActionListener(e -> check.RowsTrue(guess));
 	}
 
 	public void startSentences(List<JTextPane> sentences, int p, int q) {
-		masterbutton.addActionListener(_ -> checkSent.RowsTrueSentences(sentences, p, q));
+		masterbutton.addActionListener(e -> checkSent.RowsTrueSentences(sentences, p, q));
 	}
 }

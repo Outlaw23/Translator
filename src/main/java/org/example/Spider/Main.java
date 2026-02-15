@@ -1,27 +1,22 @@
 package org.example.Spider;
 
 import org.example.Spider.Controllers.Screen_controller;
-import org.example.Spider.models.Words.List_Maker;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.List;
+@SpringBootApplication
+public class Main implements CommandLineRunner {
 
-/**
- * Entry point of the application.
- * Responsible for starting the UI and running initial logic.
- */
-public class Main {
+	public static void main(String[] args) {
+		System.setProperty("java.awt.headless", "false");
+		SpringApplication.run(Main.class, args);
+	}
 
-	/**
-	 * Application start method.
-	 *
-	 * @param args command-line arguments (not used in this application)
-	 */
-	static void main(@SuppressWarnings("unused") String[] args) {
+	@Override
+	public void run(String... args) {
 
+		System.out.println("Spider database app gestart");
 		Screen_controller.screenContoller();
-
-		List<String> words = List_Maker.getWoorden();
-
-		IO.println(words);
 	}
 }

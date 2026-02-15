@@ -47,15 +47,15 @@ public class Learn_Hado_Screen_View {
 		}
 
 		opdrachten.getFirst().addActionListener(
-				_ -> Screen_controller.showPanel("screenWordsExplanation")
+				e -> Screen_controller.showPanel("screenWordsExplanation")
 		);
 
 		opdrachten.get(1).addActionListener(
-				_ -> Screen_controller.showPanel("screenSentencesExplanation")
+				e -> Screen_controller.showPanel("screenSentencesExplanation")
 		);
 
 		opdrachten.get(2).addActionListener(
-				_ -> Screen_controller.showPanel("screenPictureExplanation"));
+				e -> Screen_controller.showPanel("screenPictureExplanation"));
 
 		opdrachten.getFirst().setToolTipText(
 				"<html><b><span style='font-size:15pt;'>Guess Words</span></b></html>"

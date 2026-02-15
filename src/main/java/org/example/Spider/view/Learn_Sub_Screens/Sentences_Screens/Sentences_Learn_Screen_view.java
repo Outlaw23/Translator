@@ -87,7 +87,6 @@ public class Sentences_Learn_Screen_view {
 		panelButtonsWrapper.setOpaque(false);
 
 
-
 		// =========================
 		// Instruction label
 		// =========================
@@ -141,14 +140,14 @@ public class Sentences_Learn_Screen_view {
 		// Action buttons
 		// =========================
 		JButton submit = Sentences_Learn_Component.submit();
-		submit.addActionListener(_ ->
+		submit.addActionListener(e ->
 				checker.checkSentenceWords(inputBoxesList, correcteWoordenLijsten));
 
 		JButton back = Sentences_Learn_Component.back();
 
 		JButton done = Sentences_Learn_Component.done();
 		done.setEnabled(false);
-		done.addActionListener(_ -> {
+		done.addActionListener(e -> {
 			get_words_and_sentences.readFive();
 
 			List<String> newWordHado = get_words_and_sentences.getCurrentWordsHado();
@@ -175,7 +174,6 @@ public class Sentences_Learn_Screen_view {
 		panelMain.add(panelMainCenter, BorderLayout.CENTER);
 
 
-
 		panelMainCenter.add(panelText, BorderLayout.NORTH);
 		panelMainCenter.add(panelSentenceAndWords, BorderLayout.CENTER);
 		panelMainCenter.add(panelInputBoxes, BorderLayout.EAST);
@@ -188,7 +186,6 @@ public class Sentences_Learn_Screen_view {
 
 		panelButtonsWrapper.add(panelButtons, BorderLayout.CENTER);
 		panelButtonsWrapper.add(score, BorderLayout.SOUTH);
-
 
 
 		// =========================

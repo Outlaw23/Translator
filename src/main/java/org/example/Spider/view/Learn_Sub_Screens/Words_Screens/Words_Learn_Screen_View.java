@@ -92,13 +92,13 @@ public class Words_Learn_Screen_View {
 		JButton back = Words_Learn_Components.back();
 
 		JButton reset = Words_Learn_Components.reset();
-		reset.addActionListener(_ -> hadoWord.getWords(panelWords));
+		reset.addActionListener(e -> hadoWord.getWords(panelWords));
 
 		JButton submit = Words_Learn_Components.submit();
-		submit.addActionListener(_ -> check.checkWord(GuessList));
+		submit.addActionListener(e -> check.checkWord(GuessList));
 
 		JButton done = Words_Learn_Components.done();
-		done.addActionListener(_ ->
+		done.addActionListener(e ->
 				Screen_Reset_Worlds.resetScreen(
 						panelWords,
 						GuessList,
@@ -110,7 +110,7 @@ public class Words_Learn_Screen_View {
 						check
 				)
 		);
-		done.addActionListener(_ -> Screen_controller.showPanel("screenLearn"));
+		done.addActionListener(e -> Screen_controller.showPanel("screenLearn"));
 		done.setEnabled(false);
 
 		for (int i = 0; i < 60; i++) {

@@ -5,7 +5,7 @@
 ### Brief explanation
 
 In my spider project, I'm creating a translation for my own language called Hado (not a coding language).
-I'm still learning, so I'm tackling new topics that I haven't explored yet with Java.
+I'm still learning, so I'm tackling new topics that I haven't explored yet with Java. (Java 21)
 
 ### Technologies Used
 

@@ -12,8 +12,8 @@ public class DBConnection {
 	public static Connection getConnection() throws SQLException, IOException {
 		Properties props = new Properties();
 
-		// Load database configuration from db.properties
-		try (FileInputStream fis = new FileInputStream("db.properties")) {
+		// Load database configuration from application.properties
+		try (FileInputStream fis = new FileInputStream("application.properties")) {
 			props.load(fis);
 		}
 
