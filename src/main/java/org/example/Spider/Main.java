@@ -8,6 +8,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Main implements CommandLineRunner {
 
+	private final Screen_controller controller;
+
+	public Main(Screen_controller controller) {
+		this.controller = controller;
+	}
+
 	public static void main(String[] args) {
 		System.setProperty("java.awt.headless", "false");
 		SpringApplication.run(Main.class, args);
@@ -15,8 +21,6 @@ public class Main implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-
-		System.out.println("Spider database app gestart");
-		Screen_controller.screenContoller();
+		controller.screenContoller();
 	}
 }

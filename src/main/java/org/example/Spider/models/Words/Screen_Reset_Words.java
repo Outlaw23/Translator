@@ -1,7 +1,9 @@
 package org.example.Spider.models.Words;
 
+import org.example.Spider.Service.WordService;
 import org.example.Spider.models.Components.Sub_Screens.Components_Words_Screens.Words_Learn_Components;
 import org.example.Spider.models.hado_language.HadoLanguageMvc;
+import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import javax.swing.text.SimpleAttributeSet;
@@ -10,9 +12,16 @@ import javax.swing.text.StyledDocument;
 import java.awt.*;
 import java.util.List;
 
-public class Screen_Reset_Worlds {
+@Component
+public class Screen_Reset_Words {
 
-	public static void resetScreen(
+	private final WordService wordService;
+
+	public Screen_Reset_Words(WordService wordService) {
+		this.wordService = wordService;
+	}
+
+	public void resetScreen(
 			JPanel panelWords,
 			List<JTextPane> guessList,
 			JLabel op1Titel,
@@ -22,7 +31,9 @@ public class Screen_Reset_Worlds {
 			JButton doneBtn,
 			Check_Word checkWord
 	) {
-		List<String> woorden = List_Maker.newWoords();
+
+		List<String> woorden = wordService.getWords(10);
+		System.out.println(woorden + "restarted");
 
 		checkWord.fullResetState();
 
@@ -34,10 +45,13 @@ public class Screen_Reset_Worlds {
 		doneBtn.setEnabled(false);
 
 		panelWords.removeAll();
+
 		for (String wordStr : woorden) {
+
 			JLabel word = Words_Learn_Components.word(wordStr);
 
 			StringBuilder hadoWord = new StringBuilder();
+
 			for (char c : wordStr.toCharArray()) {
 				hadoWord.append(HadoLanguageMvc.hadoLanguagee(String.valueOf(c)));
 			}
@@ -50,16 +64,18 @@ public class Screen_Reset_Worlds {
 		panelWords.repaint();
 
 		for (JTextPane pane : guessList) {
+
 			pane.setText("");
 			pane.setEditable(true);
 			pane.setBackground(new Color(55, 64, 54));
 
 			StyledDocument doc = pane.getStyledDocument();
+
 			SimpleAttributeSet black = new SimpleAttributeSet();
 			StyleConstants.setForeground(black, Color.BLACK);
+
 			doc.setCharacterAttributes(0, doc.getLength(), black, true);
 			pane.setCharacterAttributes(black, true);
 		}
 	}
-
 }

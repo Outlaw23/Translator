@@ -6,14 +6,24 @@ import org.example.Spider.models.Components.Components_Everywhere;
 import org.example.Spider.models.Components.Sub_Screens.Components_Words_Screens.Words_Explanation_Components;
 import org.example.Spider.models.Models_Everywhere.MasterImagePanel;
 import org.example.Spider.models.Models_Everywhere.MasterPanel;
+import org.example.Spider.models.Words.Check_Word;
+import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 
-
+@Component
 public class Words_Explanation_Screen_View {
+
+
+	private final Check_Word check;
+
+	public Words_Explanation_Screen_View(Check_Word check) {
+		this.check = check;
+	}
+
 
 	public JPanel screenWordsExplanation() {
 
@@ -34,6 +44,8 @@ public class Words_Explanation_Screen_View {
 		JLabel explanation = Words_Explanation_Components.ExplanationWords();
 
 		JButton Start = Words_Explanation_Components.startButtonWords();
+		Start.addActionListener(e ->
+				check.RowsTrue(Words_Explanation_Components.GuessList));
 		JButton Back = Components_Everywhere.backButton(Color.gray);
 
 		panelMain.add(panelMainCenter, BorderLayout.CENTER);

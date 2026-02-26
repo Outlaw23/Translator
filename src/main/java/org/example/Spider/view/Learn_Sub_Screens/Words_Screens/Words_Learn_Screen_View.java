@@ -3,14 +3,15 @@ package org.example.Spider.view.Learn_Sub_Screens.Words_Screens;
 import org.example.Spider.Controllers.Font_Resizer;
 import org.example.Spider.Controllers.Screen_controller;
 import org.example.Spider.Img.Img_Paths;
+import org.example.Spider.Service.WordService;
 import org.example.Spider.models.Components.Sub_Screens.Components_Words_Screens.Words_Learn_Components;
 import org.example.Spider.models.Models_Everywhere.MasterImagePanel;
 import org.example.Spider.models.Models_Everywhere.MasterPanel;
 import org.example.Spider.models.Words.Check_Word;
-import org.example.Spider.models.Words.List_Maker;
-import org.example.Spider.models.Words.Screen_Reset_Worlds;
+import org.example.Spider.models.Words.Screen_Reset_Words;
+import org.example.Spider.models.Words.words;
 import org.example.Spider.models.hado_language.HadoLanguageMvc;
-import org.example.Spider.models.hado_language.Hado_Translater;
+import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,14 +20,28 @@ import java.util.List;
 
 import static org.example.Spider.models.Components.Sub_Screens.Components_Words_Screens.Words_Explanation_Components.GuessList;
 
+@Component
 public class Words_Learn_Screen_View {
 
-	// Translator for regenerating words
-	Hado_Translater hadoWord = new Hado_Translater();
 
-	Check_Word check = new Check_Word();
+	private final words words;
+	private final Screen_Reset_Words resetWords;
+	private final Check_Word check;
+	private final WordService wordService;
+
+
+	public Words_Learn_Screen_View(words words,
+								   Screen_Reset_Words resetWords,
+								   Check_Word check,
+								   WordService wordService) {
+		this.words = words;
+		this.resetWords = resetWords;
+		this.check = check;
+		this.wordService = wordService;
+	}
 
 	public JPanel Words_Learn_screen() {
+
 
 		MasterPanel panelMain = new MasterPanel("Words");
 		panelMain.buttondisable();
@@ -74,7 +89,8 @@ public class Words_Learn_Screen_View {
 
 		JLabel op1Titel = Words_Learn_Components.op1Titel();
 
-		List<String> woorden = List_Maker.getWoorden();
+		List<String> woorden = wordService.getWords(10);
+		System.out.println(woorden);
 		List<JLabel> wordList = new ArrayList<>();
 
 		for (String words : woorden) {
@@ -92,14 +108,14 @@ public class Words_Learn_Screen_View {
 		JButton back = Words_Learn_Components.back();
 
 		JButton reset = Words_Learn_Components.reset();
-		reset.addActionListener(e -> hadoWord.getWords(panelWords));
+		reset.addActionListener(e -> words.getWords(panelWords));
 
 		JButton submit = Words_Learn_Components.submit();
 		submit.addActionListener(e -> check.checkWord(GuessList));
 
 		JButton done = Words_Learn_Components.done();
 		done.addActionListener(e ->
-				Screen_Reset_Worlds.resetScreen(
+				resetWords.resetScreen(
 						panelWords,
 						GuessList,
 						op1Titel,

@@ -49,9 +49,6 @@ public class Sentences_Explanation_Component {
 	public static JButton startButtonSentences() {
 		MasterButton Start = new MasterButton("Start", "screenSentencesLearn", gray);
 
-		// Initialize the Sentences game with required data
-		Start.startSentences(inputBoxesList, rowIndex, rowEndindex);
-
 		return Start.getMasterbutton();
 	}
 

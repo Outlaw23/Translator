@@ -2,8 +2,10 @@ package org.example.Spider.models.Words;
 
 import org.example.Spider.Controllers.Score_Controller;
 import org.example.Spider.models.Components.Sub_Screens.Components_Words_Screens.Words_Learn_Components;
+import org.example.Spider.Service.WordService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import javax.swing.text.BadLocationException;
@@ -15,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+@Component
 public class Check_Word {
 	public static int scoreWords = 0;
 
@@ -27,14 +29,21 @@ public class Check_Word {
 
 	private static final Logger log = LoggerFactory.getLogger(Check_Word.class);
 
+	private final WordService wordService;
+
+	public Check_Word(WordService wordService) {
+		this.wordService = wordService;
+	}
+
 	public void checkWord(List<JTextPane> GuessList) {
 		int wordIndex = -1;
 
 		Words_Learn_Components.reset().setEnabled(false);
 		Words_Learn_Components.back().setEnabled(false);
+		List<String> woorden = wordService.getWordsList();
+		System.out.println(woorden + "check");
 
 		for (int index = rowIndex; index <= rowEndindex; index += 6) {
-			List<String> woorden = List_Maker.getWoorden();
 			wordIndex++;
 
 			if (wordIndex >= woorden.size()) break;

@@ -42,9 +42,6 @@ public class Words_Explanation_Components {
 	public static JButton startButtonWords() {
 		MasterButton Start = new MasterButton("Start", "screenWordsLearn", gray);
 
-		// Initialize the Words game with the current guess list
-		Start.startWords(GuessList);
-
 		return Start.getMasterbutton();
 	}
 

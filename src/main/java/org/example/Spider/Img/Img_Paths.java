@@ -18,3 +18,4 @@ public class Img_Paths {
 			"src/main/java/org/example/Spider/Img/background_Spider_2.jpeg";
 }
 
+	

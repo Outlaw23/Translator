@@ -1,8 +1,6 @@
 package org.example.Spider.models.Models_Everywhere;
 
 import org.example.Spider.Controllers.Screen_controller;
-import org.example.Spider.models.Sentences.Check_Sentences_Words;
-import org.example.Spider.models.Words.Check_Word;
 import org.example.Spider.models.Login.Login_Verification;
 import org.example.Spider.models.hado_language.Hado_Translater;
 
@@ -11,7 +9,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.List;
+
 
 public class MasterButton {
 
@@ -19,9 +17,6 @@ public class MasterButton {
 
 	Login_Verification login = new Login_Verification();
 
-	Check_Word check = new Check_Word();
-
-	Check_Sentences_Words checkSent = new Check_Sentences_Words();
 
 	private final JButton masterbutton = new JButton();
 
@@ -79,13 +74,5 @@ public class MasterButton {
 
 	public void loginButtonActionListener(JTextField ID, JPasswordField password, JLabel messageLabel) {
 		masterbutton.addActionListener(e -> login.loginVerification(ID, password, messageLabel));
-	}
-
-	public void startWords(List<JTextPane> guess) {
-		masterbutton.addActionListener(e -> check.RowsTrue(guess));
-	}
-
-	public void startSentences(List<JTextPane> sentences, int p, int q) {
-		masterbutton.addActionListener(e -> checkSent.RowsTrueSentences(sentences, p, q));
 	}
 }
