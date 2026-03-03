@@ -10,6 +10,7 @@ public class Main implements CommandLineRunner {
 
 	private final Screen_controller controller;
 
+
 	public Main(Screen_controller controller) {
 		this.controller = controller;
 	}

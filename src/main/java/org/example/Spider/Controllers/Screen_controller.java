@@ -25,11 +25,17 @@ public class Screen_controller {
 
 	private final Words_Learn_Screen_View wordsLearnScreen;
 	private final Words_Explanation_Screen_View wordsExplanationScreen;
+	private final Sentences_Learn_Screen_view sentencesLearnScreen;
 
-	public Screen_controller(Words_Learn_Screen_View wordsLearnScreen,
-							 Words_Explanation_Screen_View wordsExplanationScreen) {
+
+	public Screen_controller(
+			Words_Learn_Screen_View wordsLearnScreen,
+			Words_Explanation_Screen_View wordsExplanationScreen,
+			Sentences_Learn_Screen_view sentencesLearnScreen
+	) {
 		this.wordsLearnScreen = wordsLearnScreen;
 		this.wordsExplanationScreen = wordsExplanationScreen;
+		this.sentencesLearnScreen = sentencesLearnScreen;
 		instance = this;
 	}
 
@@ -58,8 +64,6 @@ public class Screen_controller {
 		Info_Screen_View info_screen = new Info_Screen_View();
 		Sentences_Explanantion_Screen_view sentences_explanantion_screen =
 				new Sentences_Explanantion_Screen_view();
-		Sentences_Learn_Screen_view sentences_learn_screen =
-				new Sentences_Learn_Screen_view();
 		Picture_Explanantion_Screen_view picture_explanantion_screen_view =
 				new Picture_Explanantion_Screen_view();
 		Picture_Learn_Screen_view picture_learn_screen_view =
@@ -76,7 +80,7 @@ public class Screen_controller {
 		mainPanel.add(wordsExplanationScreen.screenWordsExplanation(), "screenWordsExplanation");
 		mainPanel.add(info_screen.screenInfo(), "screenInfo");
 		mainPanel.add(sentences_explanantion_screen.screenSentencesExplanation(), "screenSentencesExplanation");
-		mainPanel.add(sentences_learn_screen.screenSentencesLearn(), "screenSentencesLearn");
+		mainPanel.add(sentencesLearnScreen.screenSentencesLearn(), "screenSentencesLearn");
 		mainPanel.add(picture_explanantion_screen_view.screenPictureExplanation(), "screenPictureExplanation");
 		mainPanel.add(picture_learn_screen_view.picture_Learn_Screen_view(), "pictureLearnScreen");
 

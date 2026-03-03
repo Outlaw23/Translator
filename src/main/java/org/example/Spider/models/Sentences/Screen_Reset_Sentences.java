@@ -86,5 +86,6 @@ public class Screen_Reset_Sentences {
 
 		panelInputBoxes.revalidate();
 		panelInputBoxes.repaint();
+		checker.rowsTrueSentences(inputBoxesList, 0, 0);
 	}
 }

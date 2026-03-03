@@ -1,4 +1,4 @@
-package org.example.Spider.repositories.Words;
+package org.example.Spider.repository;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

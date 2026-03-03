@@ -147,5 +147,6 @@ public class Check_Word {
 		rowIndex = 0;
 		rowEndindex = 54;
 		checkindex = 0;
+		scoreWords = 0;
 	}
 }

@@ -27,9 +27,6 @@ public class Check_Sentences_Words {
 
 	int checkindex = -1;
 
-	/**
-	 * Tracks which row should be locked (made read-only)
-	 */
 	int rowOff = 0;
 
 	public static int scoreSentences = 0;
@@ -109,7 +106,7 @@ public class Check_Sentences_Words {
 				scoreSentences++;
 			}
 
-			// ===== KLEUREN =====
+
 			for (int j = 0; j < ingevoerdeWoorden.length; j++) {
 
 				String ingevoerd = ingevoerdeWoorden[j].trim();
@@ -151,7 +148,7 @@ public class Check_Sentences_Words {
 			}
 
 			if (rowIndex >= 0 && rowIndex < inputBoxesList.size()) {
-				RowsTrueSentences(inputBoxesList, rowIndex, rowIndex);
+				rowsTrueSentences(inputBoxesList, rowIndex, rowIndex);
 			}
 
 		} else {
@@ -168,7 +165,7 @@ public class Check_Sentences_Words {
 		}
 	}
 
-	public void RowsTrueSentences(List<JTextPane> inputBoxesList, int start, int end) {
+	public void rowsTrueSentences(List<JTextPane> inputBoxesList, int start, int end) {
 		for (int index = start; index <= end; index++) {
 			JTextPane pane = inputBoxesList.get(index);
 			pane.setBackground(Color.white);
@@ -183,9 +180,7 @@ public class Check_Sentences_Words {
 		rowOff = 0;
 		rowIndex = 0;
 		rowEndindex = 0;
-
-		scoreSentences = 0; // 🔥 BELANGRIJK
-
+		scoreSentences = 0;
 		Sentences_Learn_Component.submit().setEnabled(true);
 		Sentences_Learn_Component.done().setEnabled(false);
 		Sentences_Learn_Component.back().setEnabled(true);

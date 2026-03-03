@@ -8,6 +8,7 @@ import org.example.Spider.models.Models_Everywhere.MasterPanel;
 import org.example.Spider.models.Sentences.Check_Sentences_Words;
 import org.example.Spider.models.Sentences.Get_Words_And_Sentences;
 import org.example.Spider.models.Sentences.Screen_Reset_Sentences;
+import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,85 +17,56 @@ import java.util.List;
 
 import static org.example.Spider.models.Components.Sub_Screens.Components_Sentences_Screens.Sentences_Explanation_Component.inputBoxesList;
 
-/**
- * View class from the Sentences learning screen.
- * <p>
- * This screen allows the user to place given Hado words
- * into sentence structures and validate their answers.
- */
+@Component
 public class Sentences_Learn_Screen_view {
 
-	// Data provider for words and sentences
-	Get_Words_And_Sentences get_words_and_sentences = new Get_Words_And_Sentences();
 
-	/**
-	 * Creates and returns the Sentences Learn screen panel.
-	 *
-	 * @return fully constructed Sentences Learn JPanel
-	 */
+	private final Get_Words_And_Sentences get_words_and_sentences;
+
+	public Sentences_Learn_Screen_view(Get_Words_And_Sentences get_words_and_sentences) {
+		this.get_words_and_sentences = get_words_and_sentences;
+	}
+
+
 	public JPanel screenSentencesLearn() {
 
-		// =========================
-		// Main container
-		// =========================
 		MasterPanel panelMain = new MasterPanel("Sentences");
 		panelMain.buttondisable();
 
-
-		// =========================
-		// Center panel with background
-		// =========================
 		MasterImagePanel panelMainCenter = new MasterImagePanel(Img_Paths.background_Spider_2);
 		panelMainCenter.setLayout(new BorderLayout());
 		panelMainCenter.setPreferredSize(new Dimension(1920, 500));
 		panelMainCenter.setBorder(BorderFactory.createEmptyBorder(50, 100, 50, 100));
 		panelMainCenter.setBackground(new Color(95, 102, 107));
 
-
-		// =========================
-		// Instruction text panel
-		// =========================
 		JPanel panelText = new JPanel(new GridLayout(1, 0, 5, 0));
 		panelText.setPreferredSize(new Dimension(1920, 150));
 		panelText.setBorder(BorderFactory.createEmptyBorder(5, 30, 5, 30));
 		panelText.setBackground(new Color(95, 102, 107, 0));
 		panelText.setOpaque(false);
 
-		// =========================
-		// Sentence & word display panel
-		// =========================
 		JPanel panelSentenceAndWords = new JPanel(new GridLayout(10, 0, 5, 0));
 		panelSentenceAndWords.setPreferredSize(new Dimension(1920, 100));
 		panelSentenceAndWords.setBorder(BorderFactory.createEmptyBorder(5, 30, 5, 30));
 		panelSentenceAndWords.setBackground(new Color(38, 66, 87, 0));
 
-		// =========================
-		// Input boxes panel
-		// =========================
 		JPanel panelInputBoxes = new JPanel(new GridLayout(11, 0, 5, 5));
 		panelInputBoxes.setPreferredSize(new Dimension(400, 100));
 		panelInputBoxes.setBorder(BorderFactory.createEmptyBorder(5, 30, 5, 30));
 		panelInputBoxes.setBackground(new Color(95, 102, 107, 0));
 		panelInputBoxes.setOpaque(false);
 
-		// =========================
-		// Bottom buttons panel
-		// =========================
 		JPanel panelButtons = new JPanel(new GridLayout(0, 10, 10, 0));
 		panelButtons.setOpaque(false);
 
 		JPanel panelButtonsWrapper = new JPanel(new BorderLayout());
 		panelButtonsWrapper.setOpaque(false);
 
-
-		// =========================
-		// Instruction label
-		// =========================
 		JLabel words = Sentences_Learn_Component.words();
 		JLabel score = Sentences_Learn_Component.scoreLabel();
 
-		get_words_and_sentences.load();
-		get_words_and_sentences.readFive();
+
+		get_words_and_sentences.readTen();
 
 		List<String> word = get_words_and_sentences.getCurrentWords();
 		List<String> wordHado = get_words_and_sentences.getCurrentWordsHado();
@@ -102,9 +74,6 @@ public class Sentences_Learn_Screen_view {
 		words.setText("<html>Place these words in the sentences:<br>"
 				+ String.join(" || ", wordHado) + "</html>");
 
-		// =========================
-		// Sentence labels
-		// =========================
 		List<JLabel> sentenceLabels = new ArrayList<>();
 		List<String> sentences = get_words_and_sentences.getCurrentSentences();
 
@@ -115,9 +84,6 @@ public class Sentences_Learn_Screen_view {
 			sentenceLabels.add(sentenceLabel);
 		}
 
-		// =========================
-		// Input boxes
-		// =========================
 		for (int i = 0; i < 10; i++) {
 			JTextPane inputBox = Sentences_Learn_Component.InputBoxes();
 			inputBoxesList.add(inputBox);
@@ -126,9 +92,6 @@ public class Sentences_Learn_Screen_view {
 			inputBox.setBackground(new Color(55, 64, 54));
 		}
 
-		// =========================
-		// Sentence checker setup
-		// =========================
 		Check_Sentences_Words checker = new Check_Sentences_Words();
 		List<List<String>> correcteWoordenLijsten = new ArrayList<>();
 
@@ -136,9 +99,6 @@ public class Sentences_Learn_Screen_view {
 			correcteWoordenLijsten.add(word);
 		}
 
-		// =========================
-		// Action buttons
-		// =========================
 		JButton submit = Sentences_Learn_Component.submit();
 		submit.addActionListener(e ->
 				checker.checkSentenceWords(inputBoxesList, correcteWoordenLijsten));
@@ -148,8 +108,7 @@ public class Sentences_Learn_Screen_view {
 		JButton done = Sentences_Learn_Component.done();
 		done.setEnabled(false);
 		done.addActionListener(e -> {
-			get_words_and_sentences.readFive();
-
+			get_words_and_sentences.readTen();
 			List<String> newWordHado = get_words_and_sentences.getCurrentWordsHado();
 			List<String> newSentences = get_words_and_sentences.getCurrentSentences();
 
@@ -166,10 +125,6 @@ public class Sentences_Learn_Screen_view {
 					newSentences
 			);
 		});
-
-		// =========================
-		// Layout composition
-		// =========================
 
 		panelMain.add(panelMainCenter, BorderLayout.CENTER);
 
@@ -201,6 +156,8 @@ public class Sentences_Learn_Screen_view {
 		resizableComponents.add(score);
 
 		Font_Resizer.applyResizeLogic(panelMain, resizableComponents);
+
+		checker.rowsTrueSentences(inputBoxesList, 0, 0);
 
 		// Return completed panel
 		return panelMain;

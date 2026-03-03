@@ -1,67 +1,55 @@
 package org.example.Spider.models.Sentences;
 
+import org.example.Spider.Service.SentenceService;
+import org.example.Spider.models.Dto.GameSentenceDTO;
 import org.example.Spider.models.hado_language.HadoLanguageMvc;
+import org.springframework.stereotype.Component;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
+@Component
 public class Get_Words_And_Sentences {
 
-	private final List<String> lines = new ArrayList<>();
+	private final SentenceService sentenceService;
 
-	private int currentIndex = 0;
 	private final List<String> currentWordsHado = new ArrayList<>();
-
-
 	private final List<String> currentSentences = new ArrayList<>();
-
 	private final List<String> currentWords = new ArrayList<>();
 
-	public void load() {
-		try (BufferedReader reader = new BufferedReader(new FileReader(Sentences_Paths.sentencesPath))) {
-			String line;
-			while ((line = reader.readLine()) != null) {
-				lines.add(line);
-			}
-			Collections.shuffle(lines);
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
+	public Get_Words_And_Sentences(SentenceService sentenceService) {
+		this.sentenceService = sentenceService;
 	}
 
-	public void readFive() {
+	public void readTen() {
+
 		currentWordsHado.clear();
 		currentSentences.clear();
 		currentWords.clear();
 
-		for (int i = 0; i < 10; i++) {
-			if (currentIndex >= lines.size()) {
-				Collections.shuffle(lines);
-				currentIndex = 0;
+		List<GameSentenceDTO> gameData = sentenceService.getGameData();
+
+		for (GameSentenceDTO data : gameData) {
+
+			String sentence = data.getSentence();
+			List<String> words = data.getWords();
+
+			List<String> hadoWordsForThisSentence = new ArrayList<>();
+
+			for (String word : words) {
+
+				StringBuilder hadoBuilder = new StringBuilder();
+				for (char c : word.toCharArray()) {
+					hadoBuilder.append(HadoLanguageMvc.hadoLanguagee(String.valueOf(c)));
+				}
+
+				hadoWordsForThisSentence.add(hadoBuilder.toString());
 			}
 
-			String rawLine = lines.get(currentIndex++);
-			rawLine = rawLine.substring(rawLine.indexOf(". ") + 2);
+			// Woorden in dezelfde zin scheiden met &
+			currentWordsHado.add(String.join(" & ", hadoWordsForThisSentence));
+			currentWords.add(String.join(" & ", words));
 
-			String[] parts = rawLine.split(" - ");
-			String word = parts[0].trim();
-			String sentence = parts[1].trim();
-
-			if (sentence.endsWith(".")) {
-				sentence = sentence.substring(0, sentence.length() - 1);
-			}
-
-			StringBuilder hadoBuilder = new StringBuilder();
-			for (char c : word.toCharArray()) {
-				hadoBuilder.append(HadoLanguageMvc.hadoLanguagee(String.valueOf(c)));
-			}
-
-			currentWordsHado.add(hadoBuilder.toString());
-			currentWords.add(word);
 			currentSentences.add(sentence);
 		}
 	}

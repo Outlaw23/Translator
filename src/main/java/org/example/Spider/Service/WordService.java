@@ -1,6 +1,6 @@
 package org.example.Spider.Service;
 
-import org.example.Spider.repositories.Words.List_Maker;
+import org.example.Spider.repository.List_Maker;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
