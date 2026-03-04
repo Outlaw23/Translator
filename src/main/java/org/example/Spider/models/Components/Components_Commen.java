@@ -1,14 +1,14 @@
 package org.example.Spider.models.Components;
 
-import org.example.Spider.models.Models_Everywhere.MasterButton;
-import org.example.Spider.models.Models_Everywhere.MasterLabel;
+import org.example.Spider.models.Master_Components.MasterButton;
+import org.example.Spider.models.Master_Components.MasterLabel;
 
 import javax.swing.*;
 import java.awt.*;
 
 import static java.awt.Color.*;
 
-public class Components_Everywhere {
+public class Components_Commen {
 
 	public static JLabel Title(String text) {
 		MasterLabel titel = new MasterLabel(text, white);
@@ -34,7 +34,7 @@ public class Components_Everywhere {
 		MasterButton learn = new MasterButton("Learn", "screenLearn", color);
 		return learn.getMasterbutton();
 	}
-	
+
 	public static JButton infoButton(Color color) {
 		MasterButton info = new MasterButton("Info", "screenInfo", color);
 		return info.getMasterbutton();

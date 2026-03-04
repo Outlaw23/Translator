@@ -1,8 +1,8 @@
-package org.example.Spider.models.Models_Everywhere;
+package org.example.Spider.models.Master_Components;
 
 import org.example.Spider.Controllers.Font_Resizer;
-import org.example.Spider.Img.Img_Paths;
-import org.example.Spider.models.Components.Components_Everywhere;
+import org.example.Spider.Pahts.Img_Paths;
+import org.example.Spider.models.Components.Components_Commen;
 
 import javax.swing.*;
 import java.awt.*;
@@ -38,13 +38,13 @@ public class MasterPanel extends JPanel {
 		panelMainNavigation.setBackground(new Color(38, 66, 87, 0));
 
 		// Buttons (top navigation)
-		JLabel title = Components_Everywhere.Title(titleDesc);
+		JLabel title = Components_Commen.Title(titleDesc);
 
-		home = Components_Everywhere.homeButton(gray);
-		hado = Components_Everywhere.hadoButton(gray);
-		hadoR = Components_Everywhere.hadoRButton(gray);
-		learn = Components_Everywhere.learnButton(gray);
-		info = Components_Everywhere.infoButton(gray);
+		home = Components_Commen.homeButton(gray);
+		hado = Components_Commen.hadoButton(gray);
+		hadoR = Components_Commen.hadoRButton(gray);
+		learn = Components_Commen.learnButton(gray);
+		info = Components_Commen.infoButton(gray);
 
 
 		// Compose layout: add subpanels to the main panel

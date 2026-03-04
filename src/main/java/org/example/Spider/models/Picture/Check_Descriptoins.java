@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.Spider.Controllers.Score_Controller;
 import org.example.Spider.models.Components.Sub_Screens.Components_Picture_Screen.Picture_Learn_Component;
-import org.example.Spider.models.Models_Everywhere.MasterScrollPane;
+import org.example.Spider.models.Master_Components.MasterScrollPane;
 import org.example.Spider.models.hado_language.HadoLanguageMvc;
 
 import javax.swing.*;
@@ -56,7 +56,7 @@ public class Check_Descriptoins {
 
 			exampleList.clear();
 
-			descriptions.fields().forEachRemaining(entry ->
+			descriptions.properties().forEach(entry ->
 					exampleList.add(entry.getValue().asText())
 			);
 
@@ -159,7 +159,7 @@ public class Check_Descriptoins {
 				throw new RuntimeException("words.json must be a JSON object");
 			}
 
-			root.fields().forEachRemaining(entry -> {
+			root.properties().forEach(entry -> {
 				String normalText = entry.getValue().asText();
 
 				StringBuilder hado = new StringBuilder();

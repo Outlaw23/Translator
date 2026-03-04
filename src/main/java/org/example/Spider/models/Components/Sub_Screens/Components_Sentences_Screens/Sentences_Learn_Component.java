@@ -1,9 +1,9 @@
 package org.example.Spider.models.Components.Sub_Screens.Components_Sentences_Screens;
 
-import org.example.Spider.models.Components.Components_Everywhere;
-import org.example.Spider.models.Models_Everywhere.MasterButton;
-import org.example.Spider.models.Models_Everywhere.MasterLabel;
-import org.example.Spider.models.Models_Everywhere.MasterTextPane;
+import org.example.Spider.models.Components.Components_Commen;
+import org.example.Spider.models.Master_Components.MasterButton;
+import org.example.Spider.models.Master_Components.MasterLabel;
+import org.example.Spider.models.Master_Components.MasterTextPane;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,7 +25,7 @@ public class Sentences_Learn_Component {
 	}
 
 	public static JLabel Sentence(String Sentence) {
-		return Components_Everywhere.Title(Sentence);
+		return Components_Commen.Title(Sentence);
 	}
 
 

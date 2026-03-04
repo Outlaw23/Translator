@@ -1,9 +1,9 @@
 package org.example.Spider.models.Components.Sub_Screens.Components_Words_Screens;
 
-import org.example.Spider.models.Components.Components_Everywhere;
-import org.example.Spider.models.Models_Everywhere.MasterTextPane;
-import org.example.Spider.models.Models_Everywhere.MasterButton;
-import org.example.Spider.models.Models_Everywhere.MasterLabel;
+import org.example.Spider.models.Components.Components_Commen;
+import org.example.Spider.models.Master_Components.MasterTextPane;
+import org.example.Spider.models.Master_Components.MasterButton;
+import org.example.Spider.models.Master_Components.MasterLabel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,7 +29,7 @@ public class Words_Learn_Components {
 	}
 
 	public static JLabel word(String words) {
-		return Components_Everywhere.Title(words);
+		return Components_Commen.Title(words);
 	}
 
 	public static JButton back() {
@@ -63,7 +63,7 @@ public class Words_Learn_Components {
 		}
 		return submitbutton;
 	}
-	
+
 	public static JTextPane textPane() {
 		MasterTextPane pane = new MasterTextPane("", black);
 		return pane.getMasterTextPane();

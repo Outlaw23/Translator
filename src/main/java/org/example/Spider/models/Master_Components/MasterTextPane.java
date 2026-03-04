@@ -1,4 +1,4 @@
-package org.example.Spider.models.Models_Everywhere;
+package org.example.Spider.models.Master_Components;
 
 import javax.swing.*;
 import java.awt.*;

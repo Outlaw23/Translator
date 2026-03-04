@@ -2,11 +2,11 @@ package org.example.Spider.view.Learn_Sub_Screens.Words_Screens;
 
 import org.example.Spider.Controllers.Font_Resizer;
 import org.example.Spider.Controllers.Screen_controller;
-import org.example.Spider.Img.Img_Paths;
+import org.example.Spider.Pahts.Img_Paths;
 import org.example.Spider.Service.WordService;
 import org.example.Spider.models.Components.Sub_Screens.Components_Words_Screens.Words_Learn_Components;
-import org.example.Spider.models.Models_Everywhere.MasterImagePanel;
-import org.example.Spider.models.Models_Everywhere.MasterPanel;
+import org.example.Spider.models.Master_Components.MasterImagePanel;
+import org.example.Spider.models.Master_Components.MasterPanel;
 import org.example.Spider.models.Words.Check_Word;
 import org.example.Spider.models.Words.Screen_Reset_Words;
 import org.example.Spider.models.Words.words;

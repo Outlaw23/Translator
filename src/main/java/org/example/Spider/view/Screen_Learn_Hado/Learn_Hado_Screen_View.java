@@ -2,10 +2,10 @@ package org.example.Spider.view.Screen_Learn_Hado;
 
 import org.example.Spider.Controllers.Font_Resizer;
 import org.example.Spider.Controllers.Screen_controller;
-import org.example.Spider.Img.Img_Paths;
+import org.example.Spider.Pahts.Img_Paths;
 import org.example.Spider.models.Components.Screens.Learn_Screen_Components;
-import org.example.Spider.models.Models_Everywhere.MasterImagePanel;
-import org.example.Spider.models.Models_Everywhere.MasterPanel;
+import org.example.Spider.models.Master_Components.MasterImagePanel;
+import org.example.Spider.models.Master_Components.MasterPanel;
 
 import javax.swing.*;
 import java.awt.*;

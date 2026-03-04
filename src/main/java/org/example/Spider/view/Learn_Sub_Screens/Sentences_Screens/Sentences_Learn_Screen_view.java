@@ -1,10 +1,10 @@
 package org.example.Spider.view.Learn_Sub_Screens.Sentences_Screens;
 
 import org.example.Spider.Controllers.Font_Resizer;
-import org.example.Spider.Img.Img_Paths;
+import org.example.Spider.Pahts.Img_Paths;
 import org.example.Spider.models.Components.Sub_Screens.Components_Sentences_Screens.Sentences_Learn_Component;
-import org.example.Spider.models.Models_Everywhere.MasterImagePanel;
-import org.example.Spider.models.Models_Everywhere.MasterPanel;
+import org.example.Spider.models.Master_Components.MasterImagePanel;
+import org.example.Spider.models.Master_Components.MasterPanel;
 import org.example.Spider.models.Sentences.Check_Sentences_Words;
 import org.example.Spider.models.Sentences.Get_Words_And_Sentences;
 import org.example.Spider.models.Sentences.Screen_Reset_Sentences;

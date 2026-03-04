@@ -1,9 +1,9 @@
 package org.example.Spider.models.Components.Screens;
 
-import org.example.Spider.models.Models_Everywhere.MasterTextField;
-import org.example.Spider.models.Models_Everywhere.MasterButton;
-import org.example.Spider.models.Models_Everywhere.MasterLabel;
-import org.example.Spider.models.Models_Everywhere.MasterPasswordField;
+import org.example.Spider.models.Master_Components.MasterTextField;
+import org.example.Spider.models.Master_Components.MasterButton;
+import org.example.Spider.models.Master_Components.MasterLabel;
+import org.example.Spider.models.Master_Components.MasterPasswordField;
 
 import javax.swing.*;
 
@@ -39,7 +39,7 @@ public class Login_Screen_Components {
 		MasterPasswordField password = new MasterPasswordField();
 		return password.getPasswordField();
 	}
-	
+
 	public static JButton loginButton(JTextField ID, JPasswordField password, JLabel messageLabel) {
 		MasterButton login = new MasterButton("login", "", gray);
 

@@ -1,7 +1,7 @@
 package org.example.Spider.models.Components.Screens;
 
-import org.example.Spider.models.Models_Everywhere.MasterButton;
-import org.example.Spider.models.Models_Everywhere.MasterTextArea;
+import org.example.Spider.models.Master_Components.MasterButton;
+import org.example.Spider.models.Master_Components.MasterTextArea;
 
 import javax.swing.*;
 

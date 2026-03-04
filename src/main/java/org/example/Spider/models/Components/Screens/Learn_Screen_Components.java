@@ -1,6 +1,6 @@
 package org.example.Spider.models.Components.Screens;
 
-import org.example.Spider.models.Models_Everywhere.MasterButton;
+import org.example.Spider.models.Master_Components.MasterButton;
 
 import javax.swing.*;
 import java.util.ArrayList;

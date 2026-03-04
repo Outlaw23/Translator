@@ -1,11 +1,11 @@
 package org.example.Spider.view.Learn_Sub_Screens.Words_Screens;
 
 import org.example.Spider.Controllers.Font_Resizer;
-import org.example.Spider.Img.Img_Paths;
-import org.example.Spider.models.Components.Components_Everywhere;
+import org.example.Spider.Pahts.Img_Paths;
+import org.example.Spider.models.Components.Components_Commen;
 import org.example.Spider.models.Components.Sub_Screens.Components_Words_Screens.Words_Explanation_Components;
-import org.example.Spider.models.Models_Everywhere.MasterImagePanel;
-import org.example.Spider.models.Models_Everywhere.MasterPanel;
+import org.example.Spider.models.Master_Components.MasterImagePanel;
+import org.example.Spider.models.Master_Components.MasterPanel;
 import org.example.Spider.models.Words.Check_Word;
 import org.springframework.stereotype.Component;
 
@@ -46,7 +46,7 @@ public class Words_Explanation_Screen_View {
 		JButton Start = Words_Explanation_Components.startButtonWords();
 		Start.addActionListener(e ->
 				check.RowsTrue(Words_Explanation_Components.GuessList));
-		JButton Back = Components_Everywhere.backButton(Color.gray);
+		JButton Back = Components_Commen.backButton(Color.gray);
 
 		panelMain.add(panelMainCenter, BorderLayout.CENTER);
 

@@ -1,10 +1,10 @@
 package org.example.Spider.view.Screen_Login;
 
 import org.example.Spider.Controllers.Font_Resizer;
-import org.example.Spider.Img.Img_Paths;
-import org.example.Spider.models.Components.Components_Everywhere;
+import org.example.Spider.Pahts.Img_Paths;
+import org.example.Spider.models.Components.Components_Commen;
 import org.example.Spider.models.Components.Screens.Login_Screen_Components;
-import org.example.Spider.models.Models_Everywhere.MasterImagePanel;
+import org.example.Spider.models.Master_Components.MasterImagePanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -48,7 +48,7 @@ public class Login_Screen_View extends javax.swing.JPanel {
 		panelFields.setBackground(new Color(95, 102, 107, 0));
 		panelFields.setOpaque(false);
 
-		JLabel title = Components_Everywhere.Title("Login");
+		JLabel title = Components_Commen.Title("Login");
 
 		JLabel userID = Login_Screen_Components.userID();
 		JLabel userPassword = Login_Screen_Components.userPassword();

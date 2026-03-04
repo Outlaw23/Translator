@@ -1,4 +1,4 @@
-package org.example.Spider.models.Dto;
+package org.example.Spider.Api.Dto;
 
 import java.util.ArrayList;
 import java.util.List;

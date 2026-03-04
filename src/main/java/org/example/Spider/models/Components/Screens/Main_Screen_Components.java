@@ -1,6 +1,6 @@
 package org.example.Spider.models.Components.Screens;
 
-import org.example.Spider.models.Models_Everywhere.MasterLabel;
+import org.example.Spider.models.Master_Components.MasterLabel;
 
 import javax.swing.*;
 

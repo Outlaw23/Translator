@@ -1,12 +1,12 @@
 package org.example.Spider.view.Learn_Sub_Screens.Picture_Screen;
 
 import org.example.Spider.Controllers.Font_Resizer;
-import org.example.Spider.Controllers.Picture.PictureSlideShow;
-import org.example.Spider.Img.Img_Paths;
+import org.example.Spider.Controllers.PictureController.PictureSlideShow;
+import org.example.Spider.Pahts.Img_Paths;
 import org.example.Spider.models.Components.Sub_Screens.Components_Picture_Screen.Picture_Learn_Component;
-import org.example.Spider.models.Models_Everywhere.MasterImagePanel;
-import org.example.Spider.models.Models_Everywhere.MasterPanel;
-import org.example.Spider.models.Models_Everywhere.MasterScrollPane;
+import org.example.Spider.models.Master_Components.MasterImagePanel;
+import org.example.Spider.models.Master_Components.MasterPanel;
+import org.example.Spider.models.Master_Components.MasterScrollPane;
 import org.example.Spider.models.Picture.Check_Descriptoins;
 import org.example.Spider.models.Picture.Descriptions_and_answers;
 

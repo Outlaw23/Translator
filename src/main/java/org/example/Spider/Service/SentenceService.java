@@ -1,7 +1,7 @@
 package org.example.Spider.Service;
 
 import org.example.Spider.repository.SentenceRepository;
-import org.example.Spider.models.Dto.GameSentenceDTO;
+import org.example.Spider.Api.Dto.GameSentenceDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

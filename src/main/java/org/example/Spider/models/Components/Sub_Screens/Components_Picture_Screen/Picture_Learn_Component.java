@@ -1,10 +1,10 @@
 package org.example.Spider.models.Components.Sub_Screens.Components_Picture_Screen;
 
-import org.example.Spider.models.Models_Everywhere.MasterButton;
-import org.example.Spider.models.Models_Everywhere.MasterLabel;
-import org.example.Spider.models.Models_Everywhere.MasterTextArea;
-import org.example.Spider.models.Models_Everywhere.MasterTextPane;
-import org.example.Spider.models.Picture.Img_Paths_Pictures;
+import org.example.Spider.models.Master_Components.MasterButton;
+import org.example.Spider.models.Master_Components.MasterLabel;
+import org.example.Spider.models.Master_Components.MasterTextArea;
+import org.example.Spider.models.Master_Components.MasterTextPane;
+import org.example.Spider.Pahts.Img_Paths_Pictures;
 import org.example.Spider.view.Learn_Sub_Screens.Picture_Screen.Picture_Learn_Screen_view;
 
 import javax.swing.*;

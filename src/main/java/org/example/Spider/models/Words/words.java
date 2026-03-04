@@ -1,7 +1,7 @@
 package org.example.Spider.models.Words;
 
 import org.example.Spider.Service.WordService;
-import org.example.Spider.models.Models_Everywhere.MasterLabel;
+import org.example.Spider.models.Master_Components.MasterLabel;
 import org.example.Spider.models.hado_language.HadoLanguageMvc;
 import org.springframework.stereotype.Component;
 

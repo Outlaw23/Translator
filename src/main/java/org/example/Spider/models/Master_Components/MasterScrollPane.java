@@ -1,4 +1,4 @@
-package org.example.Spider.models.Models_Everywhere;
+package org.example.Spider.models.Master_Components;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicScrollBarUI;
@@ -10,7 +10,7 @@ public record MasterScrollPane(JScrollPane scrollPane) {
 		this(new JScrollPane(content));
 
 		scrollPane.setBorder(null);
-		
+
 		scrollPane.setBackground(Color.DARK_GRAY);
 		scrollPane.getViewport().setBackground(Color.DARK_GRAY);
 

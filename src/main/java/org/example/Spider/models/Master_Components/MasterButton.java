@@ -1,4 +1,4 @@
-package org.example.Spider.models.Models_Everywhere;
+package org.example.Spider.models.Master_Components;
 
 import org.example.Spider.Controllers.Screen_controller;
 import org.example.Spider.models.Login.Login_Verification;

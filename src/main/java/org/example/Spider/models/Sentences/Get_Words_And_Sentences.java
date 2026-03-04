@@ -1,7 +1,7 @@
 package org.example.Spider.models.Sentences;
 
 import org.example.Spider.Service.SentenceService;
-import org.example.Spider.models.Dto.GameSentenceDTO;
+import org.example.Spider.Api.Dto.GameSentenceDTO;
 import org.example.Spider.models.hado_language.HadoLanguageMvc;
 import org.springframework.stereotype.Component;
 

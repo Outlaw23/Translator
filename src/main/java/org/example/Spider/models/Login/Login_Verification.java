@@ -1,6 +1,5 @@
 package org.example.Spider.models.Login;
 
-import org.checkerframework.checker.nullness.qual.MonotonicNonNull;
 import org.example.Spider.Controllers.Screen_controller;
 
 import javax.swing.*;
@@ -12,7 +11,7 @@ public class Login_Verification {
 	User_Data_Login LoginData = new User_Data_Login();
 
 
-	public void loginVerification(@MonotonicNonNull JTextField ID, JPasswordField Password, JLabel messageLabel) {
+	public void loginVerification(JTextField ID, JPasswordField Password, JLabel messageLabel) {
 
 		String userID = ID.getText();
 

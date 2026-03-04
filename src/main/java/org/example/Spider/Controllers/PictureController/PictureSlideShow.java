@@ -1,7 +1,7 @@
-package org.example.Spider.Controllers.Picture;
+package org.example.Spider.Controllers.PictureController;
 
 import org.example.Spider.models.Components.Sub_Screens.Components_Picture_Screen.Picture_Learn_Component;
-import org.example.Spider.models.Picture.Img_Paths_Pictures;
+import org.example.Spider.Pahts.Img_Paths_Pictures;
 
 public class PictureSlideShow {
 
