@@ -1,4 +1,4 @@
-## 🕷️Spider🕸️
+## 🕷️Spider - Hado Translator🕸️
 
 ---
 
@@ -9,9 +9,9 @@ I'm still learning, so I'm tackling new topics that I haven't explored yet with 
 
 ### Technologies Used
 
-| Java                                                                               | Maven                                                                                 | MariaDB                                                                                     |
-|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-| ![Java](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg) | ![Maven](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg) | ![MariaDB](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg) |
+| Java                                                                               | Spring Boot                                                                              | Maven                                                                                 | MariaDB                                                                                     |
+|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| ![Java](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg) | ![Spring](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg) | ![Maven](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg) | ![MariaDB](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg) |
 
 ### Explanation per screen
 
@@ -23,7 +23,7 @@ In this screen you must log in to access the translator.
 #### Home screen
 
 On the home screen there are sort of small
-explanations of what each screen does (besides the home, login screens).
+explanations of what each screen does.
 ![Home_Screen.png](Img_README/Home_Screen.png)
 
 #### Hado translate screen
@@ -71,8 +71,11 @@ here is the explanation of assignment 3
 #### assignment Picture (assignment 3)
 
 here is the assignment picture
+phase 1
 ![Assingnment_Picture_Screen_1.png](Img_README/Assingnment_Picture_Screen_1.png)
-![Assingnment_Picture_Screen_2.png](Img_README/Assingnment_Picture_Screen_2.png)
+phase 2
+![Assing****nment_Picture_Screen_2.png](Img_README/Assingnment_Picture_Screen_2.png)
+phase 3
 ![Assingnment_Picture_Screen_3.png](Img_README/Assingnment_Picture_Screen_3.png)
 
 #### info Screen
@@ -91,12 +94,14 @@ here is the information about my language (hado)
 ### ideas that are coming
 
 - User ID and password security
-- work with a database
 - keep a catalog for translation words
-- working with hibernate
+- more assignments
 
 ---
 
+### link to web variant
+
+https://github.com/Outlaw23/WebTranslator
 
 
     
